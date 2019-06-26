@@ -1,0 +1,25 @@
+function gui_Slice2PVS_callback(p,simple)
+
+
+if simple
+   dname = get(p,'dicom dir name');
+    center=get(p,'Slice center');
+   fc=fullfile(sprintf('mask_%s',dname),sprintf('mask_%s_PVS.mat',dname));
+   fo=fullfile(sprintf('mask_%s',dname),sprintf('mask_%s_PVS_orient.mat',dname));
+   fT2=sprintf('%s.nii.gz',dname);
+   
+else
+    
+    
+end
+
+dname = add(p,'filename','mask files','mask*.nii.gz');
+p = add(p,'filename','T2 files','T2*.nii.gz');
+
+p=add(p,'string','Slice center','');
+
+p = add(p,'button','calculate','gui_Slice2PVS_callback(params)');
+
+Slice_P2PVS(fo,fc,prefix,center,f_T2);
+
+

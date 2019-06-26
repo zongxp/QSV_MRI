@@ -1,0 +1,42 @@
+
+1 - /model_weights/concatenate_1
+2 - /model_weights/concatenate_2
+3 - /model_weights/concatenate_3
+4 - /model_weights/concatenate_4
+5 - /model_weights/concatenate_5
+6 - /model_weights/conv3d_1
+7 - /model_weights/conv3d_10
+8 - /model_weights/conv3d_2
+9 - /model_weights/conv3d_3
+10 - /model_weights/conv3d_4
+11 - /model_weights/conv3d_5
+12 - /model_weights/conv3d_6
+13 - /model_weights/conv3d_7
+14 - /model_weights/conv3d_8
+15 - /model_weights/conv3d_9
+16 - /model_weights/input_1
+17 - /model_weights/max_pooling3d_1
+18 - /model_weights/max_pooling3d_2
+19 - /model_weights/max_pooling3d_3
+20 - /model_weights/max_pooling3d_4
+21 - /model_weights/max_pooling3d_5
+22 - /model_weights/up_sampling3d_1
+23 - /model_weights/up_sampling3d_2
+24 - /model_weights/up_sampling3d_3
+    %% optimizer_weights
+    for i=1:41
+        disp(i);
+      in.GroupHierarchy.Groups(2).Datasets(i)
+     
+    end
+    
+    %% model_weights
+    for i=1:24
+     fprintf('%d - %s\n',i,in.GroupHierarchy.Groups(1).Groups(i).Name);
+     
+    end
+    
+    %%
+    a=h5read('m2edn_nmsk_iter0.best.hd5','/model_weights/conv3d_9/conv3d_9/kernel:0');
+    
+    
